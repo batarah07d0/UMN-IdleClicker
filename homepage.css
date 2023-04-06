@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+
+body {
+	background: radial-gradient(ellipse at center, rgba(127,0,173,0.6) 0%,
+  rgba(0,0,0,0.8) 60%, 
+  rgba(0,0,0,1) 90%), 
+  url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/31787/stars.jpg);
+	background-size: cover;
+	z-index:-5;
+	color: white;
+	overflow: hidden;
+	font-family: 'Monoton', monospace;
+	font-size: 2em;
+}
+.ambilgambar {
+    display: block;
+    margin: 0 auto;
+    
+  }
+
+
+.waviy {
+    position: relative;
+    -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+    font-size: 60px;
+ }
+.waviy span {
+    font-family: 'Alfa Slab One', cursive;
+    color: rgb(250, 250, 110);
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    animation: waviy 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+    
+  }
+@keyframes waviy {
+    0%,40%,100% {
+      transform: translateY(0)
+    }
+    20% {
+      transform: translateY(-20px)
+    }
+}
+.btnstart, .btnabout{
+    display: block;
+    margin: 0 auto;
+    
+}
+button {
+     outline: none;
+     padding: 1rem 2.5rem;
+     font-size: 20px;
+     background:transparent;
+     position: relative;
+    color: #b8ff57;
+     text-transform: uppercase;
+     border: 3px solid #b8ff57;
+     cursor: pointer;
+     transition: all 0.7s;
+     overflow: hidden;
+     border-radius: 40px;
+ }
+ button:hover {
+     color: #222228;
+ }
+
+ button span {
+     transition: all 0.7s;
+     z-index: -1;
+     content: "";
+     position: absolute;
+     background: #b8ff57;
+     height: 100%;
+     width: 25%;
+     background: #b8ff57;
+ }
+
+button .first{
+     right: 100%;top: 0;
+}
+
+button:hover .first{
+    top: 0; right: 0;
+    
+}
+
+button .second{
+    left: 25%;top: -100%;
+}
+button:hover .second{
+    top: 0;left: 50%;
+    
+}
+button .third{
+    left: 50%; top: 100%;
+}
+button:hover .third{
+    top: 0; left: 25%;
+    
+}
+button .fourth{
+    left: 100%;top: 0;
+}
+button:hover .fourth{
+    top: 0;left: 0;
+    
+}

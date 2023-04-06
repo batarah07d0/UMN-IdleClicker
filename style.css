@@ -1,0 +1,43 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* font-size: small; */
+}
+
+.maincontainer{
+    min-height: 100vh;
+    background-color: white;
+}
+
+/* +1 Animation */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#moneyAnimation {
+    position: relative; 
+}
+
+@keyframes moneyAnimation {
+    0% {
+        opacity: 1;
+        top: 0;
+    }
+    100% {
+        opacity: 0;
+        top: -50px;
+    }
+}
+
+.moneyAnimation {
+    animation: moneyAnimation 1s forwards;
+    position: absolute;
+}
+
+.cardId{
+    transition: all 0.3s;
+}
+
+.cardId:hover{
+    transform: scale(1.15);
+}

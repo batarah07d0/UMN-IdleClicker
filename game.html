@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CLICKER | Game</title>
+        <!-- Icon Website -->
+        <link rel="icon" type="image/x-icon" href="assets/cursor.png">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+<div id="bgSecondary1" class="bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/Others/images/76.webp'); background-size: cover;">
+    <div class="maincontainer container-xl container-fluid-lg">
+        <!-- Navigation Bar -->
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><img src="assets/cursor.png" style="height: 2em;"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="game.html">Main Game</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html">About Us</a>
+                        </li>
+                    </ul>
+                    <a class="btn btn-danger btn-sm" href="JavaScript:resetProgress()">RESET</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Bagian Click -->
+        <div class="row" style="height: 40em;">
+            <div id="bgSecondary2" class="d-flex flex-row align-items-center justify-content-center" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/Others/images/76.webp'); background-size: cover;">
+                <div id="bgMain" class="flex-grow-1 flex-row align-items-center justify-content-center border border-dark m-5 overflow-auto" style="background-image: url('assets/Tileindoor.png'); background-repeat: repeat; height: 30em;">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="card mt-3" style="width: 20em;">
+                            <div id="displayLokasi" class="card-body text-center">
+                                Lokasi: Desa
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column align-items-center flex-wrap pt-2">
+                        <div id="displayPekerja">
+                            
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column align-items-center py-5">
+                        <div id="displayClickObject">
+                            <img id="clickObject" src="assets/dollar.png" onclick="clicked()" style="height: 10em;">
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column align-items-center flex-wrap">
+                        <div id="displayItems">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bagian Upgrade -->
+        <div class="row p-3">
+            <div class="row justify-content-center mb-2">
+                <div class="col-12">
+                    <div class="fs-2 text-center">BELI UPGRADE</div>
+                </div>
+            </div>
+            <div class="row justify-content-evenly">
+                <!-- Tampilkan Money -->
+                <div class="col-12 col-lg-4 pt-3 text-center">
+                    <div class="d-inline-flex">
+                        <span id="moneyDisplay" class="fs-5">Money: 0</span>
+                        <span id="moneyAnimation" class="fs-3"></span>
+                    </div>
+                </div>
+                <!-- Tampilkan Booster -->
+                <div class="col-12 col-lg-4 pt-3 text-center">
+                    <div class="d-inline-flex">
+                        <span id="boosterDisplay" class="fs-5">Random Booster (30s):</span>
+                        <a id="boosterButton" href="JavaScript:claimBoost()" class="btn btn-warning btn-sm ms-2 disabled" aria-describedby="basic-addon2">KLAIM</a>
+                    </div>
+                </div>
+                <!-- Tampilkan Prestige -->
+                <div class="col-12 col-lg-4 pt-3 text-center">
+                    <div class="d-inline-flex">
+                        <span id="prestigeDisplay" class="fs-5">Prestige:</span>
+                        <a id="prestigeButton" href="JavaScript:buyPrestige()" class="btn btn-secondary btn-sm ms-2 disabled" aria-describedby="basic-addon2">HARGA</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Bagian Card Beli Upgrade -->
+            <div class="row mt-3">
+                <!-- Beli Upgrade -->
+                <div class="col-12 col-lg-4 pt-3">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Upgrade</h5>
+                          <p class="card-text">Pendapatan per detik di kali dua untuk tiap upgrade. Upgrade level 3 diperlukan Prestige.</p>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item m-0 p-0 pb-1 pt-1">
+                                <div id="menuUpgrade1" class="input-group input-group">
+                                    <span class="input-group-text col-10" id="basic-addon2">Upgrade 1</span>
+                                    <a href="JavaScript:buyUpgrade(0)" class="btn btn-secondary col-2" aria-describedby="basic-addon2">Beli</a>
+                                </div>
+                                <div id="menuUpgrade1Locked" class="input-group input-group">
+                                    <span class="input-group-text col-12 text-center" id="basic-addon2">DIKUNCI. BELI Level 0</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item m-0 p-0 pb-1 pt-1">
+                                <div id="menuUpgrade2" class="input-group input-group">
+                                    <span class="input-group-text col-10" id="basic-addon2">Upgrade 2</span>
+                                    <a href="JavaScript:buyUpgrade(1)" class="btn btn-secondary col-2" aria-describedby="basic-addon2">Beli</a>
+                                </div>
+                                <div id="menuUpgrade2Locked" class="input-group input-group">
+                                    <span class="input-group-text col-12 text-center" id="basic-addon2">DIKUNCI. BELI Level 1</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item m-0 p-0 pb-1 pt-1">
+                                <div id="menuUpgrade3" class="input-group input-group">
+                                    <span class="input-group-text col-10" id="basic-addon2">Upgrade 3</span>
+                                    <a href="JavaScript:buyUpgrade(2)" class="btn btn-secondary col-2" aria-describedby="basic-addon2">Beli</a>
+                                </div>
+                                <div id="menuUpgrade3Locked" class="input-group input-group">
+                                    <span class="input-group-text col-12 text-center" id="basic-addon2">DIKUNCI. BELI Level 2</span>
+                                </div>
+                            </li>
+                          </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Beli Auto-Clicker -->
+                <div class="col-12 col-lg-4 pt-3">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 id="displayAutoClickerCount" class="card-title">Auto Clicker</h5>
+                          <p class="card-text">Beli pekerja untuk toko. Pekerja akan otomatis klik untuk anda tiap detik.</p>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item m-0 p-0 pb-1 pt-1">
+                                <div id="menuAutoClicker1" class="input-group input-group">
+                                    <span class="input-group-text col-10" id="basic-addon2">Auto-Clicker (+1 click/s)</span>
+                                    <a href="JavaScript:buyAutoClicker(0)" class="btn btn-secondary col-2" aria-describedby="basic-addon2">Beli</a>
+                                </div>
+                            </li>
+                            <li class="list-group-item m-0 p-0 pb-1 pt-1">
+                                <div id="menuAutoClicker2" class="input-group input-group">
+                                    <span class="input-group-text col-10" id="basic-addon2">Auto-Clicker 2</span>
+                                    <a href="JavaScript:buyAutoClicker(1)" class="btn btn-secondary col-2" aria-describedby="basic-addon2">Beli</a>
+                                </div>
+                            </li>
+                            <li class="list-group-item m-0 p-0 pb-1 pt-1">
+                                <div id="menuAutoClicker3" class="input-group input-group">
+                                    <span class="input-group-text col-10" id="basic-addon2">Auto-Clicker 3</span>
+                                    <a href="JavaScript:buyAutoClicker(2)" class="btn btn-secondary col-2" aria-describedby="basic-addon2">Beli</a>
+                                </div>
+                            </li>
+                          </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Beli Multiplier -->
+                <div class="col-12 col-lg-4 pt-3">
+                    <div class="card">
+                        <div class="card-body">
+                          <h5 id="displayMultiplierCount" class="card-title">Multiplier</h5>
+                          <p class="card-text">Beli item untuk toko. Tiap item menambah multiplier, yang menambah income per detik.</p>    
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item m-0 p-0 pb-1 pt-1">
+                                <div id="menuMultiplier1" class="input-group input-group">
+                                    <span class="input-group-text col-10" id="basic-addon2">Multiplier +10% (Cost: 300)</span>
+                                    <a href="JavaScript:buyMultiplier(0)" class="btn btn-secondary col-2" aria-describedby="basic-addon2" onclick="">Beli</a>
+                                </div>
+                            </li>
+                            <li class="list-group-item m-0 p-0 pb-1 pt-1">
+                                <div id="menuMultiplier2" class="input-group input-group">
+                                    <span class="input-group-text col-10" id="basic-addon2">Multiplier +25% (Cost: 600)</span>
+                                    <a href="JavaScript:buyMultiplier(1)" class="btn btn-secondary col-2" aria-describedby="basic-addon2">Beli</a>
+                                </div>
+                            </li>
+                            <li class="list-group-item m-0 p-0 pb-1 pt-1">
+                                <div id="menuMultiplier3" class="input-group input-group">
+                                    <span class="input-group-text col-10" id="basic-addon2">Multiplier +50% (Cost: 1000)</span>
+                                    <a href="JavaScript:buyMultiplier(2)" class="btn btn-secondary col-2" aria-describedby="basic-addon2">Beli</a>
+                                </div>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="game.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
