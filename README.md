@@ -25,10 +25,11 @@ mendapatkan uang tanpa harus mengklik “Tahu”.
 2. Player harus melakukan upgrade level dan membeli items dengan harga tertentu untuk dapat mempercepat mendapatkan income.
 
 ### Link GitHub
-- 
+- https://github.com/dzaky2636/ProjectUTS-PTI-Clicker
+- https://github.com/dzaky2636/ProjectUTS-PTI-Clicker.git (clone)
 
 ### Link Landing Pages
-- 
+- https://tinyurl.com/Project-UTS-PTI-HL-Group2
 
 ### About Us
 1. Axel Reginald Wiranto - 00000078456 (Frontend)
