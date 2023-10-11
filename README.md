@@ -1,4 +1,4 @@
-# Project UTS PTI-Idle Clicker
+# Project UTS PTI - Idle Clicker
 
 ### Idle Clicker
 - Idle Clicker merupakan Game yang menggunakan konsep clicker, dimana pengguna harus mengklik objek untuk mendapatkan poin atau uang. Pengguna kemudian dapat menggunakan uang tersebut untuk membeli upgrade agar dapat menghasilkan uang lebih banyak.
